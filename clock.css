@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
+    float: none !important;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #a4161a;
+}
+
+/* Nav Section */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: #a4161a;
+}
+
+.nav__brand {
+    font-size: 24px;
+    margin: 11px; /*Cannot work out where 4px are coming from, hence 11px instead of 13px*/
+}
+
+.nav__ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav__list {
+    list-style: none;
+}
+
+.nav__a {
+    text-decoration: none;
+    padding: 0 15px;
+    display: block;
+    line-height: 50px;
+    color: #a4161a;
+}
+
+.nav__current {
+    background-color: #a4161a;
+    color: white;
+}
+
+.nav__toggle-btn {
+    position: absolute;
+    top: 12.5px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 25px;
+}
+
+.nav__bar {
+    height: 3px;
+    width: 100%;
+    background-color: #a4161a;
+    border-radius: 10px;
+}
+
+.nav__list:hover {
+    background-color: #B1A7A6;
+}
+
+.nav__a:hover {
+    color: white;
+}
+
+@media (max-width: 500px) {
+    .nav__toggle-btn {
+        display: flex;
+    }
+    .nav__links {
+        display: none;
+        width: 100%;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav__ul {
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+    }
+    .nav__list {
+        text-align: center;
+    }
+    .nav__a {
+        line-height: 30px;
+    }
+    .nav__links.active {
+        display: flex;
+    }
+}
+
+/* Heading Section */
+.heading {
+    width: 100%;
+    background-color: white;
+    margin: 40px 0;
+}
+
+.heading__title {
+    color: #161a1d;
+    font-size: 80px;
+    text-align: center;
+}
+
+/* Clock */
+main {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #d3d3d3;
+    position: relative;
+    overflow: hidden;
+}
+
+.clock__number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+    --rotate: 0;
+    font-size: 30px;
+    color: #e5383b;
+}
+
+.clock__number1 {
+    --rotate: 30deg;
+}
+
+.clock__number2 {
+    --rotate: 60deg;
+}
+
+.clock__number3 {
+    --rotate: 90deg;
+}
+
+.clock__number4 {
+    --rotate: 120deg;
+}
+
+.clock__number5 {
+    --rotate: 150deg;
+}
+
+.clock__number6 {
+    --rotate: 180deg;
+}
+
+.clock__number7 {
+    --rotate: 210deg;
+}
+
+.clock__number8 {
+    --rotate: 240deg;
+}
+
+.clock__number9 {
+    --rotate: 270deg;
+}
+
+.clock__number10 {
+    --rotate: 300deg;
+}
+
+.clock__number11 {
+    --rotate: 330deg;
+}
+
+.clock__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    --rotation: 0;
+}
+
+.clock__second {
+    width: 3px;
+    height: 45%;
+    background-color: #a4161a;
+}
+
+.clock__minute {
+    width: 7px;
+    height: 40%;
+    background-color: #161a1d;
+}
+
+.clock__hour {
+    width: 10px;
+    height: 35%;
+    background-color: #161a1d;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    background-color: #161a1d;
+    width: 15px;
+    height: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+    .clock {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Contact-details Section */
+.contact {
+    background-color: white;
+    color: #a4161a;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.contact__link {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: #a4161a;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.contact__number {
+    float: right;
+}
+
+.contact__email:hover {
+    text-decoration: underline;
+    color: #161a1d;
+}
+
+.contact__number:hover {
+    text-decoration: underline;
+    color: #161a1d;
+}
+
+@media only screen and (max-width: 310px) {
+    .contact {
+        font-size: 10px;
+    }
+}
